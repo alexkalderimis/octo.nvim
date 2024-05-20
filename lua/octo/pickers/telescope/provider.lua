@@ -311,7 +311,7 @@ function M.pull_requests(opts)
           .new(opts, {
             finder = finders.new_table {
               results = pull_requests,
-              entry_maker = entry_maker.gen_from_issue(max_number),
+              entry_maker = entry_maker.gen_from_pr(max_number),
             },
             sorter = conf.generic_sorter(opts),
             previewer = previewers.issue.new(opts),
