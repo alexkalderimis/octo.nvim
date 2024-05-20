@@ -24,6 +24,13 @@ function M.gen_from_issue(issue_table)
   }
 end
 
+function M.gen_from_pull_request(pr_table)
+  tbl = M.gen_from_issue(pr_table)
+  tbl["head_ref"] = tbl.headRefName
+
+  return tbl
+end
+
 function M.gen_from_git_commits(entry)
   if not entry then
     return nil
